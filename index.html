@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<script>
+var countDate = new Date("Jan 1, 2021 00:00:00").getTime();
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();  
+  var gap = countDate - now;
+    
+  var second=1000;
+  var minute=second*60;
+  var hour=minute*60;
+  var day=hour*24;
+
+  var d = Math.floor(gap / (day));
+  var h = Math.floor((gap % (day)) / (hour));
+  var m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+  var s = Math.floor((gap % (minute)) / second);
+    
+
+  document.getElementById("day").innerHTML = d;
+  document.getElementById("hour").innerHTML = h;
+  document.getElementById("minute").innerHTML = m;
+  document.getElementById("second").innerHTML = s;
+    
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+<div class="container">
+  <h2><span>Countdown to New Year</span>2020</h2>
+  <div class="countdown">
+  <div id ="day">NA</div>
+  <div id ="hour">NA</div>
+  <div id ="minute">NA</div>
+  <div id ="second">NA</div>
+  </div>
+</div>
+<p>By Pritika sharma</p>
+
+
+</body>
+</html>
